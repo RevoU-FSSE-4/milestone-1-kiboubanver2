@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="https://kit.fontawesome.com/141add2030.js" crossorigin="anonymous"></script>
+  <title>Warm Bakery</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <h1 class="logo">Warm Bakery</h1>
+    <ul class="nav-menu">
+      <li class="nav-item">Home</li>
+      <li class="nav-item">Products</li>
+      <li class="nav-item">About Us</li>
+      <li class="nav-item">Contact Us</li>
+    </ul>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Menu
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+  </nav>
+
+  <section class="main">
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="assets/pic1.jpeg" style="width:100%">
+  <div class="text">Baked to Perfection, Delivered with Affection</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="assets/Pic2.jpeg" style="width:100%">
+  <div class="text">From Oven to Heart: Where Every Cookie Tells a Sweet Story</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="assets/pic3.jpeg" style="width:100%">
+  <div class="text">Sweet Dreams, Sweeter Bites: Our Cookies, Your Bliss</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  </script>
+  </section>
+  <!--
+  <section class="gallery-container">
+-->
+
+  <section class="about">
+    <h1>About Us</h1>
+    <p>The Best Cookie Manufacturer In Town</p>
+    <div class="about-info">
+        <div class="about-img">
+            <img src="assets/kitchen.webp" alt="About Us Image">
+        </div>
+        <div>
+ <p>
+  At the core of our cookie-making philosophy is a simple yet profound belief: the best cookies arise from the best ingredients. We meticulously source premium flour, select the finest cane sugar, and embrace the natural richness of pure honey. Our dedication extends to the plant-based perfection of soy milk. Each ingredient is chosen not just for its quality but for the unique contribution it makes to the symphony of flavors in every cookie. We don't just bake; we craft moments of indulgence using the highest quality elements. Because when you start with the best, every cookie becomes a masterpiece of taste, texture, and satisfaction. Welcome to a world where exceptional ingredients create extraordinary cookies.</p>
+            <button>Read More...</button>
+        </div>
+    </div>
+</section>
+
+<h2 class="section-tittle1">Our Ingredients</h2>
+      
+<div class="responsive">
+  <div class="gallery">
+      <img src="assets/sugar-cubes.webp" alt="Sugar" width="600" height="400">
+    <div class="desc">In the art of crafting the ideal sugar for our cookies, we start with the purest cane sweetness nature has to offer. </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="assets/Flour.jpeg" alt="Flour" width="600" height="400">
+    <div class="desc">Crafting the finest flour for baking our cookies begins with selecting the choicest grains from nature.</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="assets/Honey-min-min.png" alt="Honey" width="600" height="400">
+    <div class="desc">In our pursuit of perfect sweetness for our cookies, we turn to nature's golden treasure—pure honey.</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="assets/1920px-004-soymilk.jpg" alt="Soy Milk" width="600" height="400">
+    <div class="desc">We embrace the richness of plant-based perfection with our premium soy milk.</div>
+  </div>
+</div>
+</section>
+
+<section class="Form">
+  <h2 class="form-tittle">...</h2>
+<div class="bg-img">
+  <form action="/action_page.php" class="container">
+    <h1>Contact Us</h1>
+
+    <label for="psw"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="Name" required>
+    
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+</section>
+  
+<footer>
+  <p>Copyright &copy; 2023 Warm Bakery All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
